@@ -4,7 +4,7 @@ $details = R::find('about', 1);
 // print_r($details);
 
 $aboutName = $details[1]['name'];
-$aboutDescription = $details[1]['description'];
+$aboutDescription = $details[1]['description']; 
 
 $title = "Главная";
 $content = "Содержимое главной страницы";
