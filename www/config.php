@@ -6,8 +6,7 @@ define('DB_USER', 'root');
 define('DB_PASS', 'root');
 
 // Хост сайта
-define('HOST', $_SERVER['SERVER_PROTOCOL'] . '://' . $_SERVER['HTTP_HOST'] . '');
-//REQUEST_SCHEME
+define('HOST', 'http' . '://' . $_SERVER['HTTP_HOST'] . '');
 
 // Физический путь до корневой директории скрипта
 define('ROOT', dirname(__FILE__).'/');
