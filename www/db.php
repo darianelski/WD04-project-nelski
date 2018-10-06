@@ -1,6 +1,6 @@
 <?php 
 
-require "libs/rb-mysql.php";
+require ROOT . "libs/rb-mysql.php";
 R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 
 //R::freeze( TRUE ); // отмена добавления новых полей в БД. рекомендуется при создании сайтов на продакшене
