@@ -22,12 +22,7 @@ if (isset($_POST['restore'])) {
 			R::store($user);
 
 			// Высылаем инструкцию на почту
-			$recovery_message = "<p>Код для сброса пароля: <b>$recovery_code</b></p>";
-			$recovery_message = "<p>Для сброса пароля перейдите по ссылке ниже, и установите новый пароль:</p>";
-			$recovery_message = '<p><a href="' . HOST;
-			$recovery_message = "set-new-password?email=" . $_POST['email'] . "&code=" . $recovery_code;
-			$recovery_message = '" target="_blank">';
-			$recovery_message = "Установить новый пароль</a></p>";
+			$recovery_message = "<p>Код для сброса пароля: <b>$recovery_code</b></p> <p>Для сброса пароля перейдите по ссылке ниже, и установите новый пароль:</p> <p><a href='" . HOST . "/set-new-password?email=" . $_POST['email'] . "&code=" . $recovery_code . "' target='_blank''> Установить новый пароль</a></p>";
 
 			$headers = 	"MIME-Version: 1.0" . PHP_EOL . 
 						"Content-Type: text/html; charset=utf-8" . PHP_EOL .
