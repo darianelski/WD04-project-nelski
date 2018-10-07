@@ -16,7 +16,7 @@ if (isset($_POST['postNew'])) {
 
 		$post = R::dispense('posts');
 		$post->title = htmlentities($_POST['postTitle']);
-		$post->text = $_POST['postTitle'];
+		$post->text = $_POST['postText'];
 		$post->authorID = $_SESSION['logged_user']['id'];
 		$post->dateTime = R::isoDateTime();
 
@@ -69,7 +69,7 @@ if (isset($_POST['postNew'])) {
 			$target_file = $postImgFolderLocation . $db_file_name;
 			$wmax = 920;
 			$hmax = 620;
-			$img = createThumbnail($target_file, $wmax, $hmax);
+			$img = createThumbnailBig($target_file, $wmax, $hmax);
 			$img->writeImage($target_file);
 
 			$post->postImg = $db_file_name;
@@ -79,7 +79,7 @@ if (isset($_POST['postNew'])) {
 			$resized_file = $postImgFolderLocation  . "320-" . $db_file_name;
 			$wmax = 320;
 			$hmax = 140;
-			$img = createThumbnail($target_file, $wmax, $hmax);
+			$img = createThumbnailCrop($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 
 			$post->postImgSmall = "320-" . $db_file_name;

@@ -70,6 +70,10 @@ switch ($uri[0]) {
 		include "modules/blog/post-new.php";
 		break;
 
+	case 'blog/post':
+		include "modules/blog/post.php";
+		break;
+
 	// case 'about':
 	// 	include "modules/about/index.php";
 	// 	break;
@@ -77,10 +81,6 @@ switch ($uri[0]) {
 	// case 'contacts':
 	// 	include "modules/contacts/index.php";
 	// 	break;
-
-	case 'blog':
-		include "modules/blog/index.php";
-		break;
 
 	default:
 		include "modules/main/index.php";

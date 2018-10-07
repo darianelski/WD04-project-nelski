@@ -8,14 +8,13 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 	$height = $imagick->getImageHeight();
 
 	// Изменение размера
-	// if ( $width > $height ) {
-	// 	$imagick->thumbnailImage(0, $cropHeight);
-	// } else {
-	// 	$imagick->thumbnailImage($cropWidth, 0);
-	// }
+	if ( $width > $height ) {
+		$imagick->thumbnailImage(0, $cropHeight);
+	} else {
+		$imagick->thumbnailImage($cropWidth, 0);
+	}
 
-	$imagick->thumbnailImage($cropWidth, $cropHeight);
-
+	// Кадрирование - обрезка, crop
 
 	// Определяем размеры полученной миниатюры
 	$width = $imagick->getImageWidth();
@@ -37,23 +36,42 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 
 	// Возвращаем готовое изображение
 	return $imagick;
+	$imagick->destroy();
 }
 
-/* 
+function createThumbnailBig($imagePath, $cropWidth, $cropHeight){
+	
+	/* Чтение изображения */
+	$imagick = new Imagick($imagePath);
+	$width = $imagick->getImageWidth();
+	$height = $imagick->getImageHeight();
 
-Usage Example
 
-// Define full path to the image
-$imagePath = 'D:\OpenServer\domains\php-school-all\php-imagick\flat.jpg';
+	if ( $width >= $height ) {
+		// Для широких картинок
+		$imagick->thumbnailImage($cropWidth, 0);
+	} else {
+		// Для высоких картинок
+		// $imagick->thumbnailImage($cropWidth, 0);
+		// $imagick->cropThumbnailImage($cropWidth, $cropHeight);
+		
+		$imagick->thumbnailImage(0, $cropHeight);
+	}
 
-// or with ROOT constant
-define('ROOT', dirname(__FILE__).'/');
-$imagePath = ROOT . 'flat.jpg';
+	return $imagick;
+	$imagick->destroy();
+}
 
-$img = createThumbnail($imagePath);
-header('Content-type: image/jpeg');
-echo $img;
+function createThumbnailCrop($imagePath, $cropWidth, $cropHeight){
+	
+	/* Чтение изображения */
+	$imagick = new Imagick($imagePath);
+	$width = $imagick->getImageWidth();
+	$height = $imagick->getImageHeight();
+	$imagick->cropThumbnailImage($cropWidth, $cropHeight);
+	return $imagick;
+	$imagick->destroy();
 
-*/
+}
 
 ?>

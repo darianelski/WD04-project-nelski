@@ -1,10 +1,4 @@
-<?php 
 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
- ?>
 
 
 <div class="content">
@@ -33,7 +27,7 @@ echo "</pre>";
 					</div>
 					<div class="form-group">
 						<label class="label">Содержание
-							<textarea class="textarea" name="postText" type="type" placeholder="Введите текст поста."></textarea>
+							<textarea class="textarea" name="postText" type="text" placeholder="Введите текст поста."></textarea>
 						</label>
 					</div>
 					<input type="submit" name="postNew" class="button button--save mr-20" value="Сохранить">

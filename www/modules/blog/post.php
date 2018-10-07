@@ -1,13 +1,15 @@
 <?php 
 
-$title = "Блог - все записи";
+// $title = "Блог - все записи";
 
-$posts = R::find('posts', 'ORDER BY id DESC');
+// $posts = R::find('posts', 'ORDER BY id DESC');
+
+$post = R::findOne('posts', 'id = ?', array($_GET['id']));
 
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-include ROOT . 'templates/blog/blog-all-posts.tpl';
+include ROOT . 'templates/blog/blog-post.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
