@@ -10,7 +10,18 @@ $(document).ready(function() {
         label.text("Вы выбрали " + this.files.length + " файла");
       }  else {
         label.text($(this).val().replace('C:\\fakepath\\',''));
-      }  
+      }
+    });
+
+    setTimeout(function(){
+        $('[data-notify-hide]').slideUp(400);
+    }, 2000);
+
+     $('[data-notify-hide]').dblclick(function() {
+        $(this).slideUp(400);
+     });
+
+
   });
 
 
@@ -136,8 +147,8 @@ function initMap() {
 }
 
 // Запуск карты
-initMap();
+// initMap();
 // Ждем полной загрузки страницы, после этого запускаем initMap()
 // google.maps.event.addDomListener(window, "load", initMap);
 
-});
+

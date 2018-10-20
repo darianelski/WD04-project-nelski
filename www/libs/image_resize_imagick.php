@@ -68,7 +68,7 @@ function createThumbnailCrop($imagePath, $cropWidth, $cropHeight){
 	$imagick = new Imagick($imagePath);
 	$width = $imagick->getImageWidth();
 	$height = $imagick->getImageHeight();
-	$imagick->cropThumbnailImage($cropWidth, $cropHeight);
+	// $imagick->cropThumbnailImage($cropWidth, $cropHeight);
 	return $imagick;
 	$imagick->destroy();
 
