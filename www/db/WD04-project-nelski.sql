@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 16, 2018 at 06:58 PM
+-- Generation Time: Oct 20, 2018 at 11:38 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -38,6 +38,27 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `name`, `description`) VALUES
 (1, 'Дарья Нельски', 'Я - веб-разработчик.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `cat_title`) VALUES
+(1, 'Путешествия'),
+(2, 'Едаааа'),
+(3, 'Спорт'),
+(4, 'Мечты');
 
 -- --------------------------------------------------------
 
@@ -107,7 +128,7 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `c
 (10, 'masha@mail.ru', '$2y$10$g2f19Sj0VAR/wj32xT6Bee0aW5N2mFwMR69rJewJEzQ1vx5F5lH/i', 'admin', 'Дарья', 'Нельски', 'Москва', 'Россия', '189368290896.jpg', '48-189368290896.jpg', 'KxqwkZCPtDMIb3F', 3),
 (11, '&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property \'email\' of non-object in &lt;b&gt;/Applications/MAMP/htdocs/WD04-project-nelski/www/templates/profile/profile-edit.tpl&lt;/b&gt; on line &lt;b&gt;25&lt;/b&gt;&lt;br /&gt;', '', NULL, '&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property \'name\' of non-object in &lt;b&gt;/Applications/MAMP/htdocs/WD04-project-nelski/www/templates/profile/profile-edit.tpl&lt;/b&gt; on line &lt;b&gt;15&lt;/b&gt;&lt;br /&gt;', '&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property \'secondname\' of non-object in &lt;b&gt;/Applications/MAMP/htdocs/WD04-project-nelski/www/templates/profile/profile-edit.tpl&lt;/b&gt; on line &lt;b&gt;20&lt;/b&gt;&lt;br /&gt;', '&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property \'city\' of non-object in &lt;b&gt;/Applications/MAMP/htdocs/WD04-project-nelski/www/templates/profile/profile-edit.tpl&lt;/b&gt; on line &lt;b&gt;44&lt;/b&gt;&lt;br /&gt;', '&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property \'country\' of non-object in &lt;b&gt;/Applications/MAMP/htdocs/WD04-project-nelski/www/templates/profile/profile-edit.tpl&lt;/b&gt; on line &lt;b&gt;39&lt;/b&gt;&lt;br /&gt;', '163595099549.jpg', '48-163595099549.jpg', NULL, NULL),
 (12, 'max1@mail.ru', '$2y$10$CZ4qC4hm8JLBo5J1g3EKm.7O03oxYElroCAYTauGwmd1M4w8DEk36', 'user', 'Макс', 'Горький', 'Горький', 'Россия', NULL, NULL, 'nUCVTeNDJBzXOu0', 3),
-(13, 'cat@mail.ru', '$2y$10$sZnLqcl36FU4o6heUPQzmO17D/fHH358TRywBclF7QighbmpwQgp.', 'user', 'Котик', 'Домашний', 'Дом', 'Россия', '925876336256.jpg', '48-925876336256.jpg', 'hDIxVTo3QG5vrqW', 3),
+(13, 'cat@mail.ru', '$2y$10$sZnLqcl36FU4o6heUPQzmO17D/fHH358TRywBclF7QighbmpwQgp.', 'user', 'Котик', 'Домашний', 'Дом', 'Россия', '857824390186.jpg', '48-857824390186.jpg', 'hDIxVTo3QG5vrqW', 3),
 (14, 'dog@mail.ru', '$2y$10$kfH8oCAr3ezT2xA/fJp/lOiAf4puxPARxcTqrhDzeoH.KD9jVhPAy', 'user', 'Пёс', 'Уличный', 'Улица', 'Россия', NULL, NULL, 'qhetJgmDBx8HyNP', 3),
 (15, 'bird@mail.ru', '$2y$10$KYi000X6ySaxjD4il4Kz1OJFF0GmwjapEY6bzjTKyIcoQq4ko1lW.', 'user', 'Птичка', 'Певчая', 'Небо', 'Россия', NULL, NULL, 'MxifH0gdBzKLAV4', 3);
 
@@ -119,6 +140,12 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `c
 -- Indexes for table `about`
 --
 ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -143,6 +170,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
