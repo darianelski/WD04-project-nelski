@@ -1,6 +1,6 @@
 <?php 
 
-$title = "Редактировать категорию";
+$title = "Удалить категорию";
 
 $cat = R::load('categories', $_GET['id']);
 
