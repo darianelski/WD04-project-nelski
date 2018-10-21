@@ -1,5 +1,10 @@
 <?php 
 
+if (!isAdmin()) {
+	header("Location: " . HOST);
+	die();
+}
+
 $title = "Редактировать категорию";
 
 $cat = R::load('categories', $_GET['id']);
@@ -10,7 +15,7 @@ if (isset($_POST['catDelete'])) {
 		
 	header('Location: ' . HOST . "/blog/categories?result=catDeleted");
 	exit();
-		}
+}
 
 // Готовим контент для центральной части
 ob_start();

@@ -13,6 +13,18 @@
 							<input class="input" name="postTitle" type="text" placeholder="Введите заголовок поста" />
 						</label>
 					</div>
+
+					<div class="form-group">
+						<label for="" class="label"> Категории
+							<select name="postCat">
+								<?php foreach ($cats as $cat): ?>
+									<option value="<?=$cat['id']?>"><?=$cat['cat_title']?></option>
+								<?php endforeach ?>
+							</select>
+						</label>
+					</div>
+
+
 					<div class="blog-edit__container">
 						<b>Изображение</b>
 						<p class="mb-10"> Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 4Мб.</p>
@@ -24,7 +36,8 @@
 					</div>
 					<div class="form-group">
 						<label class="label">Содержание
-							<textarea class="textarea" name="postText" type="text" placeholder="Введите текст поста."></textarea>
+							<textarea id="ckEditor" class="textarea" name="postText" type="text" placeholder="Введите текст поста."></textarea>
+							<?php include_once ROOT . "/templates/_parts/_ckEditorConnect.tpl" ?>
 						</label>
 					</div>
 					<input type="submit" name="postNew" class="button button--save mr-20" value="Сохранить">

@@ -1,10 +1,27 @@
 <?php 
 
-// $title = "Блог - все записи";
+$sql = ' 
+				SELECT 
+					posts.id, posts.title, posts.text, posts.post_img, posts.post_img_small, posts.date_time, posts.author_id, posts.cat,
+					users.name, users.secondname,
+					categories.cat_title
+				FROM `posts`
+				INNER JOIN categories ON posts.cat = categories.id
+				INNER JOIN users ON posts.author_id = users.id
 
-// $posts = R::find('posts', 'ORDER BY id DESC');
+				WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
-$post = R::findOne('posts', 'id = ?', array($_GET['id']));
+$post = R::getAll($sql);
+
+// echo "<pre>";
+// print_r($post);
+// echo "</pre>";
+// die();
+
+
+$post = $post[0];
+
+$title = $post['title'];
 
 // Готовим контент для центральной части
 ob_start();

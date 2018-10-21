@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    
 	
 	// $(".left-panel").customScrollbar({preventDefaultScroll: true});
 
@@ -20,6 +22,8 @@ $(document).ready(function() {
      $('[data-notify-hide]').dblclick(function() {
         $(this).slideUp(400);
      });
+        
+
 
 
   });

@@ -3,8 +3,8 @@
 
 	<?php require ROOT . "templates/_parts/_errors.tpl" ?>
 	
-	<input class="input-form-registration" name="email" type="email" placeholder="Email" />
-	<input class="input-form-registration" name="password" type="password" placeholder="Пароль" />
+	<input class="input-form-registration" name="email" type="email" placeholder="Email" value="masha@mail.ru" />
+	<input class="input-form-registration" name="password" type="password" placeholder="Пароль" value="0000" />
 	<div class="login-form-links">
 		<a href="<?=HOST?>/lost-password">Забыл пароль</a>
 	</div>
