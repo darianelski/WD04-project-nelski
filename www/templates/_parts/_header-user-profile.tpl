@@ -3,11 +3,8 @@
 
 		<?php 
 			if ($_SESSION['logged_user']['avatar_small'] !='') {?>
-				<img src="<?=HOST?>/usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="avatar" />
-			<?php } else {?>
-				<img src="<?=HOST?>/templates/assets/img/avatars/noavatar.png" alt="no avatar"/>
-		<?php }
-		?>
+				<img src="<?=HOST?>/usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['secondname']?>" />
+			<?php } ?>
 
 		<img src="<?=HOST?>/usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="avatar" />
 	</div>

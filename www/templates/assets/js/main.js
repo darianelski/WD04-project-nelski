@@ -22,8 +22,21 @@ $(document).ready(function() {
      $('[data-notify-hide]').dblclick(function() {
         $(this).slideUp(400);
      });
-        
 
+     // Проверка комментария
+     $('input[data-add-comment]').on('click', function(e) {
+         event.preventDefault();
+         comment = $('.comment-add-block__right').children('textarea');
+         if (comment.val() == '') {
+            $('.notify--error[data-error-comment-empty]').fadeIn();
+            comment.focus(function(event) {
+             $('.notify--error[data-error-comment-empty]').fadeOut();
+            });
+         } else {
+            $('.comment-add-block').submit();
+         }
+     });
+        
 
 
   });
