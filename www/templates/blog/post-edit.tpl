@@ -59,7 +59,7 @@
 						<div class="formInput-image">
 							<img src="<?=HOST?>/usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post->title?>" />
 							<div class="formInput-image__delete-button mt-10 delete-img">
-								<input class="delete-img__check" id="deleteImg" type="checkbox" name="deleteImg" value="yes">
+								<input class="delete-img__check" id="deleteImg" type="checkbox" name="deleteImg" value="Удалить">
 								<label class="" for="deleteImg"> + удалить изображение из системы</label>
 							</div>
 						</div>

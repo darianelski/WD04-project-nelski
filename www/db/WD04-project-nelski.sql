@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 21, 2018 at 11:52 AM
+-- Generation Time: Oct 22, 2018 at 10:52 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -59,6 +59,30 @@ INSERT INTO `categories` (`id`, `cat_title`) VALUES
 (2, 'Едаааа'),
 (3, 'Спорт'),
 (4, 'Мечты');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `post_id` int(11) UNSIGNED DEFAULT NULL,
+  `user_id` int(11) UNSIGNED DEFAULT NULL,
+  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
+(6, 22, 10, 'привет', '2018-10-21 14:48:05'),
+(9, 23, 10, 'Очень люблю)', '2018-10-21 15:53:21'),
+(10, 22, 10, 'как сложно-то', '2018-10-21 15:56:15'),
+(13, 23, 10, 'Что?', '2018-10-21 16:01:38');
 
 -- --------------------------------------------------------
 
@@ -146,6 +170,14 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_comments_post` (`post_id`),
+  ADD KEY `index_foreignkey_comments_user` (`user_id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -175,10 +207,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
