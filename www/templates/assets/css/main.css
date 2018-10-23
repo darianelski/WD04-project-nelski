@@ -99,6 +99,10 @@ blockquote p {
   position: relative;
   z-index: 1;
 }
+.contact-social-link {
+  display: block;
+  font-weight: 700;
+}
 .body--dashboard {
   padding-left: 330px;
   padding-right: 15px;
@@ -2589,6 +2593,8 @@ h3.main-page__aboutme {
   background-color: #222222;
   color: #fff;
 }
+
+
 
 
 
