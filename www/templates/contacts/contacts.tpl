@@ -38,7 +38,7 @@
 								</a>
 							<?php } else if ( $name == 'github' ) { ?>
 								<a 	class="contacts-block-info__item-link" target="_blank"  
-									href="<?=$contacts[$name]?>">
+									href="https://github.com/<?=$contacts[$name]?>">
 									<?=$contacts[$name]?>
 								</a>
 							<?php } else { ?>
