@@ -103,6 +103,22 @@ switch ($uri[0]) {
 	default:
 		include "modules/main/index.php";
 		break;
+
+
+	// :::::::::::: CONTACTS ::::::::::::
+
+	case 'contacts':
+		include "modules/contacts/index.php";
+		break;
+
+	case 'contacts-edit':
+		include "modules/contacts/edit.php";
+		break;
+
+	case 'messages':
+		include "modules/contacts/messages.php";
+		break;
+
 }
 
 // echo $uri;

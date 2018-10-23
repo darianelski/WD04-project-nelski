@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 22, 2018 at 10:52 PM
+-- Generation Time: Oct 23, 2018 at 11:46 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -83,6 +83,37 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 (9, 23, 10, 'Очень люблю)', '2018-10-21 15:53:21'),
 (10, 22, 10, 'как сложно-то', '2018-10-21 15:56:15'),
 (13, 23, 10, 'Что?', '2018-10-21 16:01:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `phone` double DEFAULT NULL,
+  `adress` varchar(191) DEFAULT NULL,
+  `name` varchar(191) DEFAULT NULL,
+  `secondname` varchar(191) DEFAULT NULL,
+  `skype` varchar(191) DEFAULT NULL,
+  `vk` varchar(191) DEFAULT NULL,
+  `fb` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL,
+  `twitter` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, `skype`, `vk`, `fb`, `github`, `twitter`) VALUES
+(6, '11', 11, '1', 'Дарья', '1', '1', '1', '1', '1', '1'),
+(7, '11', 1, '1', '11', '11', '1', '1', '1', '1', '1'),
+(8, '2', 2, '2', '2', '2', '2', '2', '2', '2', '2'),
+(9, '3', 3, '3', '3', '3', '3', '3', '3', '', ''),
+(10, '4', 4, '4', '4', '4', '4', '4', '', '4', '');
 
 -- --------------------------------------------------------
 
@@ -178,6 +209,12 @@ ALTER TABLE `comments`
   ADD KEY `index_foreignkey_comments_user` (`user_id`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -213,10 +250,16 @@ ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
