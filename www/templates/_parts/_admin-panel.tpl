@@ -57,7 +57,7 @@
 			</a>
 		</li>
 		<li class="admin-nav-item">
-			<a class="admin-nav__link" href="#">
+			<a class="admin-nav__link" href="<?=HOST?>/messages">
 				<i class="fas fa-envelope"></i>
 				<span class="ml-10">Сообщения</span>
 			</a>

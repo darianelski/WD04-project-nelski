@@ -18,3 +18,9 @@
 	</div>
 	
 <?php } ?>
+
+<?php if ($_GET['result'] == 'msgDeleted') {?>
+	<div class="mt-20 notify notify--error mb-20" data-notify-hide>
+		Сообщение было удалено.
+	</div>
+<?php } ?>
