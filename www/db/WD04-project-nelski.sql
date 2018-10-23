@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 23, 2018 at 11:46 AM
+-- Generation Time: Oct 23, 2018 at 02:19 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -93,7 +93,7 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
   `email` varchar(191) DEFAULT NULL,
-  `phone` double DEFAULT NULL,
+  `phone` varchar(191) DEFAULT NULL,
   `adress` varchar(191) DEFAULT NULL,
   `name` varchar(191) DEFAULT NULL,
   `secondname` varchar(191) DEFAULT NULL,
@@ -109,11 +109,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, `skype`, `vk`, `fb`, `github`, `twitter`) VALUES
-(6, '11', 11, '1', 'Дарья', '1', '1', '1', '1', '1', '1'),
-(7, '11', 1, '1', '11', '11', '1', '1', '1', '1', '1'),
-(8, '2', 2, '2', '2', '2', '2', '2', '2', '2', '2'),
-(9, '3', 3, '3', '3', '3', '3', '3', '3', '', ''),
-(10, '4', 4, '4', '4', '4', '4', '4', '', '4', '');
+(1, 'daria.nelski@gmail.com', '03', 'Москва', 'Дарья', 'Нельски', 'dasha_lego', 'https://vk.com/c_e_v', '', 'darianelski', '');
 
 -- --------------------------------------------------------
 
@@ -253,7 +249,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `posts`
