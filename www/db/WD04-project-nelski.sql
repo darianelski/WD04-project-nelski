@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 23, 2018 at 02:19 PM
+-- Generation Time: Oct 23, 2018 at 07:39 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -114,6 +114,31 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file_name_original` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `message`, `message_file_name_original`, `message_file`, `date_time`) VALUES
+(3, 'Максим', 'max', '2', 'Снимок экрана 2018-01-11 в 23.50.33.png', '628504966105.png', '2018-10-23 15:42:13'),
+(4, 'Миша', 'misha@gmail.com', 'Никакого вреда автомобилю. Переживаете что не понравится или передумаете?\r\nВернём деньги и заводскую прошивку в тот же день без всяких заявлений!', 'Dsk8qceH_qY.jpg', '704735879037.jpg', '2018-10-23 16:00:18'),
+(9, 'Павел', 'pavel@gmail.com', 'Хочу заказать у вас сайт.', NULL, NULL, '2018-10-23 19:37:16');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -211,6 +236,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -252,10 +283,16 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
