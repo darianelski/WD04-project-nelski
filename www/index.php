@@ -123,6 +123,24 @@ switch ($uri[0]) {
 		include "modules/contacts/messages-delete.php";
 		break;
 
+	// :::::::::::: ABOUT ::::::::::::
+
+	case 'about':
+		include "modules/about/index.php";
+		break;
+
+	case 'edit-text':
+		include "modules/about/edit-text.php";
+		break;
+
+	case 'edit-skills':
+		include "modules/about/edit-skills.php";
+		break;
+
+	case 'edit-experience':
+		include "modules/about/edit-experience.php";
+		break;
+
 }
 
 // echo $uri;

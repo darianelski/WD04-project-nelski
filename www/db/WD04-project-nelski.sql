@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 23, 2018 at 07:39 PM
+-- Generation Time: Oct 24, 2018 at 08:42 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `photo` varchar(191) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `description`) VALUES
-(1, 'Дарья Нельски', 'Я - веб-разработчик.');
+INSERT INTO `about` (`id`, `name`, `description`, `photo`) VALUES
+(1, 'Дарья Нельски', '<p>Я веб разработчик из Москвы. Мне 28 лет.<br />\r\nЗанимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.</p>\r\n\r\n<p>Этот сайт я сделала в рамках обучения в школе онлайн обучения WebCademy.<br />\r\nЧуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!</p>\r\n\r\n<h3>Что я умею</h3>\r\n\r\n<p>Меня привлекет Frontend разработка, это не только моя работа, но и хобби.<br />\r\nТакже знаком и могу решать не сложные задачи на Backend.</p>\r\n\r\n<p>Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.</p>\r\n', '904241413059.jpg');
 
 -- --------------------------------------------------------
 
@@ -114,6 +115,27 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `experience`
+--
+
+CREATE TABLE `experience` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `period` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `experience`
+--
+
+INSERT INTO `experience` (`id`, `period`, `title`, `description`) VALUES
+(1, 'февраль 2017 &mdash; по настоящее время', 'Frontend разработчик, Вконтактe, mail.ru group', 'Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента'),
+(3, 'январь 2017 &mdash; январь 2019', 'Верстальщик', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `messages`
 --
 
@@ -163,6 +185,33 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 (23, 'Тестовый постик', '<p>Я люблю море)</p>\r\n', 10, '2018-10-20 20:02:07', '428732689700.jpg', '320-428732689700.jpg', 4, '2018-10-21 11:50:44'),
 (28, '15 самых популярных вопросов про ИП и ООО в российском интернете (с ответами)', '<p>По всей России люди задают одни и те же вопросы про ИП и ООО и не могут найти внятных и аргументированных ответов. Пора уже устранить этот пробел. Поехали.</p>\r\n\r\n<h3><strong>Вопрос №1: должен ли ИП вести бухгалтерский учет?</strong></h3>\r\n\r\n<p>Нет не должен.</p>\r\n\r\n<p>Почему? Часть 2 статьи 6 Федерального закона &quot;О бухгалтерском учете&quot; прямо указывает что ИП могут не вести бухгалтерский учет.</p>\r\n\r\n<p>На уровне здравого смысла этому также есть объяснение - бухгалтерский учет в отличие от налогового прежде всего интересен в компаниях где есть несколько собственников и директор для того, чтобы контролировать друг друга и ситуацию в компании. ИП же сам себе хозяин ему некому отчитываться.</p>\r\n', 10, '2018-10-20 23:13:57', '942688736485.jpg', '320-942688736485.jpg', 1, '2018-10-21 11:50:15'),
 (33, 'Пост без фото.', '<p>Пост без фото.</p>\r\n', 10, '2018-10-21 11:51:53', NULL, NULL, 3, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `html` int(11) UNSIGNED DEFAULT NULL,
+  `css` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `js` int(11) UNSIGNED DEFAULT NULL,
+  `jquery` int(11) UNSIGNED DEFAULT NULL,
+  `php` int(11) UNSIGNED DEFAULT NULL,
+  `mysql` int(11) UNSIGNED DEFAULT NULL,
+  `git` int(11) UNSIGNED DEFAULT NULL,
+  `gulp` int(11) UNSIGNED DEFAULT NULL,
+  `npm` int(11) UNSIGNED DEFAULT NULL,
+  `yarn` int(11) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `skills`
+--
+
+INSERT INTO `skills` (`id`, `html`, `css`, `js`, `jquery`, `php`, `mysql`, `git`, `gulp`, `npm`, `yarn`) VALUES
+(1, 100, '100', 10, 80, 60, 50, 70, 80, 90, 80);
 
 -- --------------------------------------------------------
 
@@ -236,6 +285,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `experience`
+--
+ALTER TABLE `experience`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
@@ -247,6 +302,12 @@ ALTER TABLE `messages`
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `index_foreignkey_posts_author` (`author_id`);
+
+--
+-- Indexes for table `skills`
+--
+ALTER TABLE `skills`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -283,6 +344,12 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `experience`
+--
+ALTER TABLE `experience`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
@@ -292,7 +359,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -3,8 +3,6 @@
 		<div class="col-md-12 offset-md-1">
 			<h1>Редактировать профиль</h1>
 		</div>
-
-		
 	
 		<?php require ROOT . "templates/_parts/_errors.tpl" ?>
 
