@@ -45,7 +45,7 @@
 			</a>
 		</li>
 		<li class="admin-nav-item">
-			<a class="admin-nav__link" href="#">
+			<a class="admin-nav__link" href="<?=HOST?>/blog/about">
 				<i class="fas fa-edit"></i>
 				<span class="ml-10">Обо мне</span>
 			</a>

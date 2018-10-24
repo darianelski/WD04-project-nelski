@@ -78,6 +78,28 @@ switch ($uri[0]) {
 		include "modules/categories/delete.php";
 		break;
 
+	// :::::::::::: WORKS ::::::::::::
+
+	case 'works':
+		include "modules/works/index.php";
+		break;
+
+	case 'works/work-new':
+		include "modules/works/work-new.php";
+		break;
+
+	case 'works/work-edit':
+		include "modules/works/work-edit.php";
+		break;
+
+	case 'works/work-delete':
+		include "modules/work/work-delete.php";
+		break;
+
+	case 'works/work':
+		include "modules/works/work.php";
+		break;
+
 	// :::::::::::: BLOG ::::::::::::
 
 	case 'blog':
@@ -99,11 +121,6 @@ switch ($uri[0]) {
 	case 'blog/post':
 		include "modules/blog/post.php";
 		break;
-
-	default:
-		include "modules/main/index.php";
-		break;
-
 
 	// :::::::::::: CONTACTS ::::::::::::
 
@@ -139,6 +156,10 @@ switch ($uri[0]) {
 
 	case 'edit-experience':
 		include "modules/about/edit-experience.php";
+		break;
+
+	default:
+		include "modules/main/index.php";
 		break;
 
 }

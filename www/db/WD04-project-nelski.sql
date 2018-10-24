@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 24, 2018 at 08:42 PM
+-- Generation Time: Oct 24, 2018 at 11:28 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -254,6 +254,36 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `c
 (14, 'dog@mail.ru', '$2y$10$kfH8oCAr3ezT2xA/fJp/lOiAf4puxPARxcTqrhDzeoH.KD9jVhPAy', 'user', 'Пёс', 'Уличный', 'Улица', 'Россия', NULL, NULL, 'qhetJgmDBx8HyNP', 3),
 (15, 'bird@mail.ru', '$2y$10$KYi000X6ySaxjD4il4Kz1OJFF0GmwjapEY6bzjTKyIcoQq4ko1lW.', 'user', 'Птичка', 'Певчая', 'Небо', 'Россия', NULL, NULL, 'MxifH0gdBzKLAV4', 3);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `works`
+--
+
+CREATE TABLE `works` (
+  `id` int(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `author_id` varchar(255) NOT NULL,
+  `date_time` datetime NOT NULL,
+  `work_img` varchar(255) NOT NULL,
+  `work_img_small` varchar(255) NOT NULL,
+  `cat` int(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  `result` int(11) UNSIGNED DEFAULT NULL,
+  `tech` int(11) UNSIGNED DEFAULT NULL,
+  `link` int(11) UNSIGNED DEFAULT NULL,
+  `github` int(11) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `works`
+--
+
+INSERT INTO `works` (`id`, `title`, `text`, `author_id`, `date_time`, `work_img`, `work_img_small`, `cat`, `update_time`, `result`, `tech`, `link`, `github`) VALUES
+(1, '1', 'Содержание', '10', '2018-10-24 23:04:25', '791130445417.png', '320-791130445417.png', 0, '0000-00-00 00:00:00', 2, 3, 4, 4),
+(2, '2', '2', '10', '2018-10-24 23:15:47', '294492271255.jpg', '320-294492271255.jpg', 0, '0000-00-00 00:00:00', 2, 2, 2, 2);
+
 --
 -- Indexes for dumped tables
 --
@@ -316,6 +346,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `works`
+--
+ALTER TABLE `works`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -372,6 +408,12 @@ ALTER TABLE `skills`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `works`
+--
+ALTER TABLE `works`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
