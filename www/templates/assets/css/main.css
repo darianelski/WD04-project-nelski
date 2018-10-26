@@ -1285,10 +1285,15 @@ fieldset {
   margin-bottom: 2rem;
 }
 .post-img img {
-
   margin: auto;
   max-width: 100%;
 }
+
+.work-img img {
+  display: block;
+  margin: auto !important;
+}
+
 .post-text {
   padding-right: 1em;
 }
@@ -1694,10 +1699,14 @@ ul.admin-nav--right a.admin-nav__link {
   margin-bottom: 120px;
 }
 .my-portfolio__nav ul {
-  list-style-type: disc;
+  list-style-type: none !important;
   padding: 0;
   margin: 0;
 }
+ul {
+  list-style-type: none !important;
+}
+
 .my-portfolio__nav ul .my-portfolio__item {
   margin-bottom: 10px;
   margin-left: 20px;

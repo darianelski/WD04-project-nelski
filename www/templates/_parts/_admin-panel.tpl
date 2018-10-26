@@ -39,7 +39,7 @@
 
 
 		<li class="admin-nav-item">
-			<a class="admin-nav__link" href="#">
+			<a class="admin-nav__link" href="<?=HOST?>/works/work-new">
 				<i class="fas fa-plus-circle"></i>
 				<span class="ml-10">Работа</span>
 			</a>

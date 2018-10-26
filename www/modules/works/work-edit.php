@@ -5,11 +5,10 @@ if (!isAdmin()) {
 	die();
 }
 
-$title = "Редактировать пост";
+$title = "Редактировать работу";
 
 $work = R::load('works', $_GET['id']);
 $cats = R::find('categories', 'ORDER BY cat_title ASC');
-
 
 if (isset($_POST['workUpdate'])) {
 
@@ -29,12 +28,12 @@ if (isset($_POST['workUpdate'])) {
 		if (empty($errors)) {
 
 		$work->title = htmlentities($_POST['workTitle']);
-		$work->cat = htmlentities($_POST['workCat']);
+		// $work->cat = htmlentities($_POST['workCat']);
 		$work->text = $_POST['workText'];
-		$work->text = $_POST['workResult'];
-		$work->text = $_POST['workTech'];
-		$work->text = $_POST['workLink'];
-		$work->text = $_POST['workGithub'];
+		$work->result = $_POST['workResult'];
+		$work->tech = $_POST['workTech'];
+		$work->link = $_POST['workLink'];
+		$work->github = $_POST['workGithub'];
 		$work->authorID = $_SESSION['logged_user']['id'];
 		$work->updateTime = R::isoDateTime();
 
@@ -81,7 +80,7 @@ if (isset($_POST['workUpdate'])) {
 
 			// Перемещаем загруженный файл в нужную директорию
 			$db_file_name = rand(100000000000, 999999999999) . "." . $fileExt;
-			$workImgFolderLocation = ROOT . 'usercontent/blog/';
+			$workImgFolderLocation = ROOT . 'usercontent/works/';
 			$uploadFile = $workImgFolderLocation . $db_file_name;
 			$moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
 
@@ -125,18 +124,16 @@ if (isset($_POST['workUpdate'])) {
 			$img = createThumbnailCrop($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 
-			$post->postImgSmall = "320-" . $db_file_name;
+			$work->workImgSmall = "320-" . $db_file_name;
 
 
 		}
 
 		R::store($work);
-		header('Location: ' . HOST . "/works?result=workCreated");
+		header('Location: ' . HOST . "/works?result=workUpdated");
 		exit();
 
-
 	}
-
 
 }
 

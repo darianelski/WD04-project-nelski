@@ -93,7 +93,7 @@ switch ($uri[0]) {
 		break;
 
 	case 'works/work-delete':
-		include "modules/work/work-delete.php";
+		include "modules/works/work-delete.php";
 		break;
 
 	case 'works/work':

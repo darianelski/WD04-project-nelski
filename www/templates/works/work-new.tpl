@@ -1,16 +1,23 @@
+<?php 
+	function dataFromWork($fieldName) {
+		global $works;
+		echo @$_POST[$fieldName] != '' ? @$_POST[$fieldName] : $works[$fieldName];
+	}
+?>
+
 <div class="content">
 	<div class="container user-content section-page">
-		<form action="<?=HOST?>/works/work-new" method="POST" enctype="multipart/form-data">
+
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
 				<h1>Добавить работу</h1>
 
 				<?php require ROOT . "templates/_parts/_errors.tpl" ?>
 
-			
+			<form action="<?=HOST?>/works/work-new" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
 					<label class="label">Название
-						<input class="input" name="workTitle" type="text" placeholder="Введите название работы" />
+						<input class="input" name="workTitle" type="text" placeholder="Введите название работы" value="<?php dataFromWork("workTitle");?>"/>
 					</label>
 				</div>
 				<p class="label mb-0">Изображение</p>
@@ -25,7 +32,8 @@
 						<textarea 	class="textarea" 
 												name="workText" 
 												type="type" 
-												placeholder="Введите описание"></textarea>
+												placeholder="Введите описание"
+												value="<?php dataFromWork("workText");?>"></textarea>
 					</label>
 				</div>
 				<div class="form-group">
@@ -33,15 +41,20 @@
 						<textarea 	class="textarea" 
 												name="workResult" 
 												type="type" 
-												placeholder="Введите описание"></textarea>
+												placeholder="Введите описание"
+												<?php dataFromWork("workResult");?>">
+													
+						</textarea>
 					</label>
 				</div>
 				<div class="form-group">
 					<label class="label"> Технологии
 						<textarea 	class="textarea" 
 												name="workTech" 
-												type="type" 
-												placeholder="Введите описание"></textarea>
+												type="type"
+												id="ckEditor"
+												placeholder="Введите описание"><?php dataFromWork("workTech");?></textarea> 
+												<?php include_once ROOT . "/templates/_parts/_ckEditorConnect.tpl" ?>
 					</label>
 				</div>
 			</div>
@@ -53,14 +66,22 @@
 						<div class="form-group">
 							<label class="label">
 								Ссылка на проект
-								<input class="input" name="workLink" type="text" placeholder="Введите ссылку" />
+								<input 	class="input" 
+												name="workLink" 
+												type="text" 
+												placeholder="Введите ссылку" 
+												value="<?php dataFromWork("workLink");?>"/>
 							</label>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 							<label class="label">Ссылка на GitHub
-								<input class="input" name="workGithub" type="text" placeholder="Введите ссылку" />
+								<input 	class="input" 
+												name="workGithub" 
+												type="text" 
+												placeholder="Введите ссылку" 
+												value="<?php dataFromWork("workGithub");?>"/>
 							</label>
 						</div>
 					</div>

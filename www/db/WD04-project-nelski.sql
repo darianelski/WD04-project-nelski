@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 24, 2018 at 11:28 PM
+-- Generation Time: Oct 27, 2018 at 01:24 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -270,10 +270,10 @@ CREATE TABLE `works` (
   `work_img_small` varchar(255) NOT NULL,
   `cat` int(255) NOT NULL,
   `update_time` datetime NOT NULL,
-  `result` int(11) UNSIGNED DEFAULT NULL,
-  `tech` int(11) UNSIGNED DEFAULT NULL,
-  `link` int(11) UNSIGNED DEFAULT NULL,
-  `github` int(11) UNSIGNED DEFAULT NULL
+  `result` varchar(191) DEFAULT NULL,
+  `tech` varchar(191) DEFAULT NULL,
+  `link` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -281,8 +281,9 @@ CREATE TABLE `works` (
 --
 
 INSERT INTO `works` (`id`, `title`, `text`, `author_id`, `date_time`, `work_img`, `work_img_small`, `cat`, `update_time`, `result`, `tech`, `link`, `github`) VALUES
-(1, '1', 'Содержание', '10', '2018-10-24 23:04:25', '791130445417.png', '320-791130445417.png', 0, '0000-00-00 00:00:00', 2, 3, 4, 4),
-(2, '2', '2', '10', '2018-10-24 23:15:47', '294492271255.jpg', '320-294492271255.jpg', 0, '0000-00-00 00:00:00', 2, 2, 2, 2);
+(25, 'Личный сайт ведического астролога Дмитрия Бутузова', 'Верстка сайта.', '10', '2018-10-27 00:30:42', '264378081250.png', '320-264378081250.png', 0, '2018-10-27 01:03:47', NULL, '<ul>\r\n	<li>HTML,&nbsp;CSS</li>\r\n	<li>JavaScript, jQuery</li>\r\n	<li>WordPress</li>\r\n</ul>\r\n', 'http://butuzov.pro', ''),
+(27, 'Планетный марафон', 'Верстка лендинга.', '10', '2018-10-27 01:19:04', '148548699402.png', '320-148548699402.png', 0, '2018-10-27 01:19:31', NULL, '<ul>\r\n	<li>HTML, CSS</li>\r\n	<li>JavaScript, jQuery</li>\r\n</ul>\r\n', 'https://marafon.jataka.expert', ''),
+(28, 'Автоцентр Варшавский', 'Верстка сайта.', '10', '2018-10-27 01:21:13', '626128639758.png', '320-626128639758.png', 0, '2018-10-27 01:21:41', NULL, '<ul>\r\n	<li>HTML, CSS</li>\r\n	<li>JavaScript, jQuery</li>\r\n</ul>\r\n', 'http://warsaw-auto.by', '');
 
 --
 -- Indexes for dumped tables
@@ -395,7 +396,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `skills`
@@ -413,7 +414,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

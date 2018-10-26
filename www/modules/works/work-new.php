@@ -5,7 +5,7 @@ if (!isAdmin()) {
 	die();
 }
 
-$title = "Работы - добавить новый пост";
+$title = "Работы - добавить новую работу";
 
 $cats = R::find('categories', 'ORDER BY cat_title ASC');
 
@@ -23,7 +23,7 @@ if (isset($_POST['workNew'])) {
 
 		$work = R::dispense('works');
 		$work->title = htmlentities($_POST['workTitle']);
-		$work->cat = htmlentities($_POST['workCat']);
+		// $work->cat = htmlentities($_POST['workCat']);
 		$work->text = $_POST['workText'];
 		$work->result = $_POST['workResult'];
 		$work->tech = $_POST['workTech'];
@@ -90,7 +90,7 @@ if (isset($_POST['workNew'])) {
 			$target_file = $workImgFolderLocation . $db_file_name;
 			$resized_file = $workImgFolderLocation  . "320-" . $db_file_name;
 			$wmax = 320;
-			$hmax = 200;
+			$hmax = 140;
 			$img = createThumbnailCrop($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 
